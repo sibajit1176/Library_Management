@@ -1,0 +1,36 @@
+<%- include('Layout/header') %>
+
+    <div class="container">
+        <div class="row">
+            <form action="/Add" method="post" enctype="multipart/form-data" class="row g-3">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Book Name</label>
+                    <input type="text" name="bookname" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Book Name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Author Name</label>
+                    <input type="text" name="authorname" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Author Name">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Book Price</label>
+                    <input type="text" name="price" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Price">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">About Book</label>
+                    <textarea class="form-control" name="summary" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Book Image</label>
+                    <input class="form-control" name="image" type="file" id="formFile">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" name="submit" value="add book" class="btn btn-primary mb-3">Add Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <%- include('Layout/footer') %>

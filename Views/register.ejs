@@ -1,0 +1,38 @@
+<%- include('Layout/header') %>
+  <div class="container">
+    <div class="row justify-content-center ">
+      <div class="shadow card" style="width: 40rem; height: 25rem;">
+        <form action="/Register" method="post" >
+  
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="userType" id="radio1" value="user">
+            <label class="form-check-label" for="radio1">
+              USER
+            </label>
+          </div >
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="userType" id="radio2" value="admin">
+              <label class="form-check-label" for="radio2">
+                ADMIN
+              </label>
+        </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Academic Id</label>
+            <input type="text" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+          </div>
+
+          <button type="submit" name="submit" value="Add user" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <%- include('Layout/footer') %>

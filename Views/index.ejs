@@ -1,0 +1,32 @@
+<%- include('Layout/header') %>
+
+    <div class="container">
+        <div class="row d-flex justify-content-around">
+            
+            <% if(books!=''){%>
+              <% books.forEach((row,index)=>{%>
+                
+                <div class="card shadow p-3 mb-3" style="max-width: 16rem; background-color: rgba(221, 236, 241, 0.808);" >
+                  <img src="<%= row.image %>" width="10" height="150" class="card-img-top" alt="<%= row.image %>">
+                  <div class="card-body " style="background-color: rgba(221, 236, 241, 0.808);">
+                    <h5 class="card-title "><%= row.bookname %></h5>
+                    <h6 class="card-title"><p class="card-text"><%= `Written by ${row.authorname}` %></p></h6>
+                  </div>
+                 
+                  <% if (row.mark) { %>
+                    <a href="/Profile" class="btn btn-primary align-items-end">On Loan</a>
+                  <% } else { %>
+                    <a href="/Profile/<%=row._id%>" class="btn btn-primary align-items-end">Borrow</a>
+                  <% } %>
+              </div>
+                <%}) %>
+              
+              <%}else{%>
+                <h1 class="text-center text-secondary mt-5"> No data found</h1>
+
+                <%} %>
+            
+        </div>
+    </div>
+
+ <%- include('Layout/footer') %>

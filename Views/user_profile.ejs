@@ -1,0 +1,26 @@
+<%- include('Layout/header') %>
+    <div class="container ">
+          <% if(addBook!=''){%>
+            <% addBook.forEach((row,index)=>{%>
+              <div class="shadow p-3 row mb-4" style="height:300px;overflow: hidden; background-color: rgba(221, 236, 241, 0.808);">
+                 <div class="col-3">
+                  <img src="<%= row.image %>" width="100%" height="100%"  alt="...">
+                 </div>
+                 <div class="col-9">
+                    <h2><%= row.bookname %></h2>
+                    <p><%= `Written by ${row.authorname}` %></p>
+                    <p><%= `About ${row.bookname}: ${row.summary}` %></p>
+                    <h4><%= `Price: $${row.price}` %></h4>
+                    <a href="/Home/<%=row._id%>" class="btn btn-primary align-items-end">Return</a>
+                 </div>
+                 
+              </div>
+                
+              <%}) %>
+              
+              <%}else{%>
+                <h1 class="text-center text-secondary mt-5"> No data found</h1>
+
+                <%} %>
+    </div>
+    <%- include('Layout/footer') %>
